@@ -2,18 +2,18 @@
 
 <h2 class="shadow p-3 mb-5 bg-light rounded">My Workouts</h2>
 <br>
-<div class="card">
-  <div class="card-body">    
-    <ul class="list-group">
-      <li class="list-group-item">Date</li>
-      <li class="list-group-item">Date</li>
-      <li class="list-group-item">Date</li>
-    </ul>
-  </div>
-</div>
+<%= workouts %>
 <br>
-<form method="GET" action="/workouts/new">
-  <button  type="submit" class="btn btn-outline-primary">Add Workout</button>
+<form method="POST" action="/workouts">
+  <div class="input-group">
+    <input name="name" type="text" class="form-control" placeholder="Workout Name" aria-label="" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group-append">
+    <button class="btn btn-success" type="submit">Add Workout</button>
+  </div>
 </form>
+
+
+
 
 <%- include('../partials/footer'); %>

@@ -7,7 +7,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 });
 
 mongoose.connection.on('connected', () => {
-  console.log(`Connected to /shelf succesfully!`);
+  console.log(`Connected to database succesfully!`);
 });
 
 module.exports = mongoose;

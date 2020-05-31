@@ -7,6 +7,7 @@ var workoutsCtrl = require('../controllers/workouts');
 
 router.get('/workouts', workoutsCtrl.index);
 router.get('/workouts/new', workoutsCtrl.new);
+router.post('/workouts', workoutsCtrl.addWorkout);
 
 
 
