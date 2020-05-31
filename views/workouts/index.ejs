@@ -1,0 +1,19 @@
+<%- include('../partials/header'); %>
+
+<h2 class="shadow p-3 mb-5 bg-light rounded">My Workouts</h2>
+<br>
+<div class="card">
+  <div class="card-body">    
+    <ul class="list-group">
+      <li class="list-group-item">Date</li>
+      <li class="list-group-item">Date</li>
+      <li class="list-group-item">Date</li>
+    </ul>
+  </div>
+</div>
+<br>
+<form method="GET" action="/workouts/new">
+  <button  type="submit" class="btn btn-outline-primary">Add Workout</button>
+</form>
+
+<%- include('../partials/footer'); %>
