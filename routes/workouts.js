@@ -16,7 +16,7 @@ router.post('/', workoutsCtrl.addWorkout);
 
 
 
-// router.delete('/:id', workoutsCtrl.delete);
+router.delete('/:id', workoutsCtrl.delete);
 
 
 

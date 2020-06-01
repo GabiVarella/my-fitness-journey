@@ -6,7 +6,7 @@ module.exports = {
   new: newWorkoutPage,
   addWorkout,
   show,
-  // delete: deleteWorkout,
+  delete: deleteWorkout,
 
 };
 
@@ -48,6 +48,11 @@ function show(req, res){
 //   }) 
 // };
 
+function deleteWorkout(req, res) {
+  Workout.findByIdAndDelete(req.params.id, function(err, workouts) {
+       res.redirect('/workouts');
+  })
+}
 
 // function newWorkoutPage(req, res){
 //   User.find({user: req.user._id}, function(err, user){
