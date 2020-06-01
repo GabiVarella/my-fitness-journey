@@ -1,11 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>SHOW VIEW</p>
-</body>
-</html>
+<%- include('../partials/header'); %>
+    <table class="table table-striped">
+
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Exercise</th>
+                <th>Details</th>
+                <th>Likes</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Exercise idx + 1</th>
+                <td>Squats</td>
+                    <form action="/workouts" method="POST">
+                        <td><a href="">DETAILS</a></td>
+                    </form>
+                <td># of Likes</td>
+                <td>
+                    <form action="?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-outline-danger">X</button>
+                    </form>
+                </td>
+            </tr>
+            
+        </tbody>
+
+    </table>
+
+    <br>
+    <form method="GET" action="/workouts/<%= workout._id %>/exercises/new">
+        <div class="input-group-append">
+            <button class="btn btn-outline-success" type="submit">Add Exercise</button>
+        </div>
+    </form>
+<%- include('../partials/footer'); %>
+    

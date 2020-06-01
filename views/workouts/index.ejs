@@ -1,41 +1,56 @@
 <%- include('../partials/header'); %>
 
 <h2 class="shadow p-3 mb-5 bg-light rounded">My Journal</h2>
+
+
+
 <br>
-<table>
-  <thead>
+<table class="table table-striped">
+  
+  <thead class="thead-dark">
       <tr>
         <% if (workouts.length) { %>
           <th>Workout</th>
           <th>Details</th>
+          <th>Likes</th>
           <th>Delete</th>
       </tr>
     <% } %>
   </thead>
+
+
   <tbody>
       <% workouts.forEach(function(w) { %>
           <tr>
-              <td><%= w.name %></td>
+            <td><%= w.name %></td>
               <form action="/workouts" method="POST">
                 <td><a href="/workouts/<%= w._id %>">DETAILS</a></td>
               </form>
-              <td>
-                  <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
-                      <button type='submit'>X</button>
-                  </form>
-              </td>
+            <td>
+              <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-outline-primary">Like</button>
+              </form>
+              <!-- Squid Print # of Likes -->
+            </td>
+            <td>
+              <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-outline-danger">X</button>
+              </form>
+            </td>
           </tr>
       <% }) %>
   </tbody>
+
+
 </table>
 
 <br>
 <form method="POST" action="/workouts">
   <div class="input-group">
-    <input name="name" type="text" class="form-control" placeholder="Workout Name" aria-label="" aria-describedby="basic-addon1">
+    <input name="name" type="text" class="form-control" placeholder="What Are You Calling Your New Workout?" aria-label="" aria-describedby="basic-addon1">
   </div>
   <div class="input-group-append">
-    <button class="btn btn-success" type="submit">Add Workout</button>
+    <button class="btn btn-outline-success" type="submit">Add Workout</button>
   </div>
 </form>
 

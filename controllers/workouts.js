@@ -1,5 +1,6 @@
 const User = require('../models/user');
-const Workout = require('../models/workout');
+const Exercise = require("../models/workout");
+const Workout = require("../models/workout");
 
 module.exports = {
   index,
@@ -38,15 +39,6 @@ function show(req, res){
     res.render('workouts/show', {user: req.user, workout: workout});
   })
 };
-
-// function deleteWorkout (req, res) {
-//   Workout.findById(req.params.id, function(err, workouts){
-//     workouts.splice(req.params.id, 1);
-//     workouts.save(function(err) {
-//       res.redirect('workouts/index');
-//     })
-//   }) 
-// };
 
 function deleteWorkout(req, res) {
   Workout.findByIdAndDelete(req.params.id, function(err, workouts) {
