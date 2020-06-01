@@ -5,8 +5,8 @@ module.exports = {
   index,
   new: newWorkoutPage,
   addWorkout,
-  delete: deleteWorkout,
   show,
+  // delete: deleteWorkout,
 
 };
 
@@ -16,6 +16,7 @@ function index(req, res){
    })
 };
 
+//Fix security flaw in User.find
 function newWorkoutPage(req, res){
   User.findById(req.user._id, function(err, users){
     res.render('workouts/new', {user: req.user, users: users});
@@ -32,19 +33,24 @@ function addWorkout (req, res){
     })
 };
 
-function deleteWorkout (req, res) {
-  req.body.user = req.user._id;
-  const workout = new Workout(req.body);
-  Workout.find({user: req.user._id}, function(err, workouts){
-    workouts.splice(req.params.id, 1);
-    workout.save(function(err) {
-      res.redirect('workouts/index');
-    })
-  }) 
-};
-
 function show(req, res){
   Workout.findById(req.params.id, function(err, workout){
     res.render('workouts/show', {user: req.user, workout: workout});
   })
 };
+
+// function deleteWorkout (req, res) {
+//   Workout.findById(req.params.id, function(err, workouts){
+//     workouts.splice(req.params.id, 1);
+//     workouts.save(function(err) {
+//       res.redirect('workouts/index');
+//     })
+//   }) 
+// };
+
+
+// function newWorkoutPage(req, res){
+//   User.find({user: req.user._id}, function(err, user){
+//     res.render('workouts/new', {user: user});
+//   })
+// };

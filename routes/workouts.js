@@ -1,6 +1,8 @@
 //Require
-var router = require('express').Router();
-var workoutsCtrl = require('../controllers/workouts');
+const express = require('express');
+const router = require('express').Router();
+const passport = require('passport');
+const workoutsCtrl = require('../controllers/workouts');
 
 
 ///Get workouts
@@ -14,9 +16,13 @@ router.post('/', workoutsCtrl.addWorkout);
 
 
 
-router.delete('/:id', workoutsCtrl.delete);
+// router.delete('/:id', workoutsCtrl.delete);
 
 
 
+// function isLoggedIn(req, res, next) {
+//     if (req.isAuthenticated()) return next();
+//     res.redirect('/auth/google');
+// };
 
 module.exports = router;
