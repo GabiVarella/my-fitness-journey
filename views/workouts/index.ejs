@@ -5,10 +5,12 @@
 <table>
   <thead>
       <tr>
+        <% if (workouts.length) { %>
           <th>Workout</th>
           <th>Details</th>
           <th>Delete</th>
       </tr>
+    <% } %>
   </thead>
   <tbody>
       <% workouts.forEach(function(w) { %>
