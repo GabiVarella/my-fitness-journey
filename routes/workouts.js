@@ -8,21 +8,19 @@ const workoutsCtrl = require('../controllers/workouts');
 ///Get workouts
 
 router.get('/', workoutsCtrl.index);
-router.get('/new', workoutsCtrl.new);
-router.get('/:id', workoutsCtrl.show);
+router.get('/new', isLoggedIn, workoutsCtrl.new);
+router.get('/:id', isLoggedIn,  workoutsCtrl.show);
 
 
-router.post('/', workoutsCtrl.addWorkout);
-
-
-
-router.delete('/:id', workoutsCtrl.delete);
+router.post('/', isLoggedIn, workoutsCtrl.addWorkout);
 
 
 
-// function isLoggedIn(req, res, next) {
-//     if (req.isAuthenticated()) return next();
-//     res.redirect('/auth/google');
-// };
+router.delete('/:id', isLoggedIn, workoutsCtrl.delete);
+
+function isLoggedIn(req, res, next) {
+    if ( req.isAuthenticated() ) return next();
+    res.redirect('/auth/google');
+  }
 
 module.exports = router;

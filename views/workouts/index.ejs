@@ -17,7 +17,7 @@
           <tr>
               <td><%= w.name %></td>
               <form action="/workouts" method="POST">
-                <td><a href="/workouts/show<%= w._id %>">DETAILS</a></td>
+                <td><a href="/workouts/<%= w._id %>">DETAILS</a></td>
               </form>
               <td>
                   <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
