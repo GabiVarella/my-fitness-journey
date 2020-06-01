@@ -5,10 +5,16 @@ var workoutsCtrl = require('../controllers/workouts');
 
 ///Get workouts
 
-router.get('/workouts', workoutsCtrl.index);
-router.get('/workouts/new', workoutsCtrl.new);
-router.post('/workouts', workoutsCtrl.addWorkout);
+router.get('/', workoutsCtrl.index);
+router.get('/new', workoutsCtrl.new);
+router.get('/:id', workoutsCtrl.show);
 
+
+router.post('/', workoutsCtrl.addWorkout);
+
+
+
+router.delete('/:id', workoutsCtrl.delete);
 
 
 
