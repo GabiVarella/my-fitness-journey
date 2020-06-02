@@ -7,10 +7,10 @@
   <thead class="thead-dark">
       <tr>
         <% if (workouts.length) { %>
-          <th>Workout</th>
-          <th>Details</th>
-          <th>Likes</th>
-          <th>Delete</th>
+          <th>WORKOUTS</th>
+          <th>DETAILS</th>
+          <th>LIKES</th>
+          <th>DELETE</th>
       </tr>
     <% } %>
   </thead>
@@ -19,9 +19,9 @@
   <tbody>
       <% workouts.forEach(function(w) { %>
           <tr>
-            <td><%= w.name %></td>
+            <td class="listproperties"><%= w.name %></td>
               <form action="/workouts" method="POST">
-                <td><a href="/workouts/<%= w._id %>">DETAILS</a></td>
+                <td><a href="/workouts/<%= w._id %>">VIEW</a></td>
               </form>
             <td>
               <form action="" method="">
@@ -41,7 +41,7 @@
 <br>
 <form method="POST" action="/workouts">
   <div class="input-group">
-    <input name="name" type="text" class="form-control" placeholder="What Are You Calling Your New Workout?" aria-label="" aria-describedby="basic-addon1">
+    <input name="name" type="text" class="form-control" required="true" placeholder="What Are You Calling Your New Workout?" aria-label="" aria-describedby="basic-addon1">
   </div>
   <div class="input-group-append">
     <button class="btn btn-outline-success" type="submit">Add Workout</button>

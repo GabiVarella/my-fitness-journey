@@ -1,0 +1,29 @@
+<%- include('../partials/header'); %>
+
+  <form method="POST" action="/exercises/workouts/<%= workout._id %>/exercises">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Exercise Name</label>
+      <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Weight</label>
+      <input name="weight" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Reps</label>
+        <input name="reps" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Sets</label>
+        <input name="sets" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Link</label>
+        <input name="link" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+      </div>
+    
+    <button  type="submit" class="btn btn-outline-primary">Add To Workout</button>
+
+  </form>
+  
+<%- include('../partials/footer'); %>

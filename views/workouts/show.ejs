@@ -1,29 +1,19 @@
 <%- include('../partials/header'); %>
     <table class="table table-striped">
-
         <thead class="thead-dark">
             <tr>
                 <% if (workout.exercises.length) { %>
-                    <th>Exercise</th>
-                    <th>Details</th>
-                    <th>Likes</th>
-                    <th>Delete</th>
+                    <th>EXERCISES</th>
+                    <th>DETAILS</th>
+                    <th>LIKES</th>
+                    <th>DELETE</th>
             </tr>
             <% } %>
         </thead>
-
-
-
-
-
-
-
-
-
         <tbody>
             <% workout.exercises.forEach(function(ex, idx) { %>
             <tr>
-                <td><%= ex.name %></td>
+                <td class="listproperties"><%= ex.name %></td>
                     <form action="/exercises/<%= workout._id %>/<%= idx %>" method="GET">
                         <td><a href="/exercises/<%= workout._id %>/<%= idx %>">DETAILS</a></td>
                     </form>
@@ -35,14 +25,7 @@
                 </td>
             </tr>
             <% }) %>
-        </tbody>
-
-
-
-
-
-
-        
+        </tbody>  
     </table>
     <br>
     <form method="GET" action="/workouts/<%= workout._id %>/exercises/new">

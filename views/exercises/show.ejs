@@ -1,33 +1,34 @@
 <%- include('../partials/header'); %>
-
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th><%= workout.exercises[idx].name %></th>
+                <th class="listproperties"><%= workout.exercises[idx].name.toUpperCase() %></th>
                 <th></th>          
             </tr>
         </thead>
-        
-        <tbody>
         <tr>
-            <th scope="row">Weight: <%= workout.exercises[idx].weight %> Lbs</th>
-            <td></td>
-            
-        </tr>
-        <tr>
-            <th scope="row">Sets: <%= workout.exercises[idx].sets %></th>
+            <th class="listproperties" scope="row">Weight: <%= workout.exercises[idx].weight %> Lbs</th>
             <td></td>
         </tr>
         <tr>
-            <th scope="row">Reps: <%= workout.exercises[idx].reps %></th>
+            <th class="listproperties" scope="row">Sets: <%= workout.exercises[idx].sets %></th>
             <td></td>
         </tr>
         <tr>
-            <th scope="row">Demo: <%= workout.exercises[idx].link %></th>
+            <th class="listproperties" scope="row">Reps: <%= workout.exercises[idx].reps %></th>
+            <td></td>
+        </tr>
+        <tr>
+            <th class="listproperties" scope="row">Demo: <%= workout.exercises[idx].link %></th>
             <td></td>
         </tr>
         </tbody>
     </table>
+    <form method="GET" action="/exercises/<%= workout._id %>/<%= idx %>/edit">
+        <div class="input-group-append">
+            <button class="btn btn-outline-success" type="submit">Edit Exercise</button>
+        </div>
+    </form>
 <%- include('../partials/footer'); %>
 
     

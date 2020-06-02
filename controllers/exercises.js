@@ -7,6 +7,7 @@ module.exports = {
     addExercise,
     deleteExercise,
     show,
+    updatePage,
   };
 
 function newExercisePage(req, res){
@@ -38,5 +39,11 @@ function deleteExercise(req, res){
 function show(req, res){
     Workout.findById(req.params.id, function(err, workout){
         res.render('exercises/show', {idx: req.params.idx, workout: workout});
+    });
+};
+
+function updatePage(req, res){
+    Workout.findById(req.params.id, function(err, workout){
+        res.render('exercises/edit', {workout: workout});
     });
 };
