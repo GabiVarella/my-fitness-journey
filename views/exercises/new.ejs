@@ -1,32 +1,28 @@
 <%- include('../partials/header'); %>
 
-  <form>
-    <div class="form-group">
-      <label for="formGroupExampleInput">Workout Name Name</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-    </div>
+  <form method="POST" action="/exercises/workouts/<%= workout._id %>/exercises">
     <div class="form-group">
       <label for="formGroupExampleInput">Exercise Name</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+      <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
     </div>
     <div class="form-group">
       <label for="formGroupExampleInput2">Weight</label>
-      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+      <input name="weight" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput">Reps</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        <input name="reps" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">Sets</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input name="sets" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">Link</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input name="link" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
       </div>
     
-    <button  type="submit" class="btn btn-outline-primary">Add Exercise</button>
+    <button  type="submit" class="btn btn-outline-primary">Add To Workout</button>
 
   </form>
   

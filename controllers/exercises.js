@@ -4,7 +4,7 @@ const Workout = require("../models/workout");
 
 module.exports = {
     new: newExercisePage,
-    // addExercise,
+    addExercise,
     // show,
     // delete: deleteExercise,
   
@@ -16,10 +16,15 @@ function newExercisePage(req, res){
     })
 };
 
-function addExercisePage(req, res){
+function addExercise(req, res){
+    req.body.workout = req.params.id;
+    console.log(req.body);
     Workout.findById(req.params.id, function(err, workout){
-        res.render("exercises/new", {workout});
-    })
+        workout.exercises.push(req.body);
+        workout.save(function(err){
+            res.redirect(`/workouts/${req.params.id}`);
+        })
+    });
 };
 
 

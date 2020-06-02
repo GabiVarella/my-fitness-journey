@@ -44,7 +44,7 @@ function deleteWorkout(req, res) {
   Workout.findByIdAndDelete(req.params.id, function(err, workouts) {
        res.redirect('/workouts');
   })
-}
+};
 
 // function newWorkoutPage(req, res){
 //   User.find({user: req.user._id}, function(err, user){

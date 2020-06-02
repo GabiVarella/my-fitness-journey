@@ -5,7 +5,7 @@ const exercisesCtrl = require('../controllers/exercises');
 
 
 
-// router.post("/workouts/:id/exercises", exercisesCtrl.createExercise);
+router.post("/workouts/:id/exercises", exercisesCtrl.addExercise);
 
 
 
