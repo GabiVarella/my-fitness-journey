@@ -10,4 +10,13 @@
   padding-top: 20px;
 }
 
+.mynavbar {
+  background-color: aquamarine;
+  height: 12em;
+  
+}
 
+.mynavbarftsize {
+  font-size: 1em;
+  color: black;
+}

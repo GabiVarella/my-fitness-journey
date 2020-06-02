@@ -7,27 +7,31 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS Framework -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
   <!-- JavaScript for Materialize -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Regular CSS -->
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
-        <a href="" class="brand-logo left">My Fitness Journey</a>
+      <div class="nav-wrapper mynavbar">
+        <a href="/workouts" class="brand-logo left "><span class="mynavbarftsize">My Fitness Journey</span></a>
         <ul class="right">
           <li>
           <% if (user) { %>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+            <a href="/logout"><i class="material-icons left">trending_flat</i><span class="mynavbarftsize">Log Out</span></a>
           <% } else { %>
-            <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+            <a href="/auth/google"><i class="material-icons left">vpn_key</i><span class="mynavbarftsize">Login with Google</span></a>
           <% } %>
           </li>
         </ul>
       </div>
     </nav>
   </div>
+
+  
+ 

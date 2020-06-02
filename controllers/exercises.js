@@ -5,9 +5,8 @@ const Workout = require("../models/workout");
 module.exports = {
     new: newExercisePage,
     addExercise,
-    // show,
-    // delete: deleteExercise,
-  
+    deleteExercise,
+    show,
   };
 
 function newExercisePage(req, res){
@@ -27,11 +26,17 @@ function addExercise(req, res){
     });
 };
 
+function deleteExercise(req, res){
+    Workout.findById(req.params.id, function(err, workout){
+        workout.exercises.splice(req.params.idx, 1);
+        workout.save(function(err){
+            res.redirect(`/workouts/${req.params.id}`);
+        });
+    });
+};
 
-//Referencing mongoose flights
-// function createTicket(req, res){
-//     req.body.flight = req.params.id;
-//     Ticket.create(req.body, function(err){
-//         res.redirect(`/flights/${req.params.id}`);
-//     })
-// };
+function show(req, res){
+    Workout.findById(req.params.id, function(err, workout){
+        res.render('exercises/show', {idx: req.params.idx, workout: workout});
+    });
+};

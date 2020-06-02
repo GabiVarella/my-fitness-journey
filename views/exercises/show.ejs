@@ -1,0 +1,49 @@
+<%- include('../partials/header'); %>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th><%= workout.exercises[idx].name %></th>
+                <th></th>          
+            </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+            <th scope="row">Weight: <%= workout.exercises[idx].weight %> Lbs</th>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <th scope="row">Sets: <%= workout.exercises[idx].sets %></th>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">Reps: <%= workout.exercises[idx].reps %></th>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">Demo: <%= workout.exercises[idx].link %></th>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+<%- include('../partials/footer'); %>
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+   
