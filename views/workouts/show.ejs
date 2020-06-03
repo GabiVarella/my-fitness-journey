@@ -3,10 +3,11 @@
         <thead class="thead-dark">
             <tr>
                 <% if (workout.exercises.length) { %>
-                    <th>EXERCISES</th>
-                    <th>DETAILS</th>
-                    <th>LIKES</th>
-                    <th>DELETE</th>
+                    <th class="listproperties">EXERCISES</th>
+                    <th class="listproperties">UPDATED</th>
+                    <th class="listproperties">DETAILS</th>
+                    <th class="listproperties">LIKES</th>
+                    <th class="listproperties">DELETE</th>
             </tr>
             <% } %>
         </thead>
@@ -14,8 +15,9 @@
             <% workout.exercises.forEach(function(ex, idx) { %>
             <tr>
                 <td class="listproperties"><%= ex.name %></td>
+                <td class="listproperties"><%= ex.updatedAt.toLocaleString() %></td>
                     <form action="/exercises/<%= workout._id %>/<%= idx %>" method="GET">
-                        <td><a href="/exercises/<%= workout._id %>/<%= idx %>">DETAILS</a></td>
+                        <td><a href="/exercises/<%= workout._id %>/<%= idx %>">VIEW</a></td>
                     </form>
                 <td># of Likes</td>
                 <td>

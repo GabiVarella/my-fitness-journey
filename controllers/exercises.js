@@ -45,7 +45,7 @@ function show(req, res){
 
 function updatePage(req, res){
     Workout.findById(req.params.id, function(err, workout){
-        res.render('exercises/edit', {workout: workout});
+        res.render('exercises/edit', {idx: req.params.idx, workout: workout});
     });
 };
 
@@ -53,6 +53,8 @@ function updateExercise(req, res){
     Workout.findById(req.params.id, function(err, workout){
         workout.exercises[req.params.idx] = req.body;
         console.log(req.body);
-        res.redirect(`/workouts/${req.params.id}`, {idx: req.params.idx, workout: workout});
+        workout.save(function(err){
+            res.redirect(`/workouts/${req.params.id}`);
+        });
     });
 };
