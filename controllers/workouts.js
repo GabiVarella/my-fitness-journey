@@ -8,6 +8,7 @@ module.exports = {
   addWorkout,
   show,
   delete: deleteWorkout,
+  addLike,
 
 };
 
@@ -29,7 +30,6 @@ function addWorkout (req, res){
     const workout = new Workout(req.body);
     workout.save(function(err) {
         if (err) res.redirect('workouts/new');
-        console.log(workout);
         res.redirect('/workouts');
     })
 };
@@ -46,6 +46,15 @@ function deleteWorkout(req, res) {
   })
 };
 
+function addLike(req, res) {
+  Workout.findById(req.params.id, function(err, workout){
+    workout.likes += 1;
+    workout.save(function(err){
+      console.log(workout.likes);
+      res.redirect('/workouts');
+    });
+  });
+};
 // function newWorkoutPage(req, res){
 //   User.find({user: req.user._id}, function(err, user){
 //     res.render('workouts/new', {user: user});

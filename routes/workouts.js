@@ -13,11 +13,13 @@ router.get('/', workoutsCtrl.index);
 router.get('/new', isLoggedIn, workoutsCtrl.new);
 //Workout Details
 router.get('/:id', isLoggedIn,  workoutsCtrl.show);
-
-
+//Add Workout
 router.post('/', isLoggedIn, workoutsCtrl.addWorkout);
-
+//Delete Workout
 router.delete('/:id', isLoggedIn, workoutsCtrl.delete);
+//Add Likes
+router.put('/:id', isLoggedIn, workoutsCtrl.addLike);
+
 
 //Exercise Routes
 router.get("/:id/exercises/new", exercisesCtrl.new);

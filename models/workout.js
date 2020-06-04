@@ -20,7 +20,8 @@ const exerciseSchema = new mongoose.Schema({
 
 const workoutSchema = new mongoose.Schema({
     name: String,
-    likes: Number,
+    likes: {
+        type: Number, default: 0},
     exercises: [exerciseSchema],
     user: {
         type: Schema.Types.ObjectId, 

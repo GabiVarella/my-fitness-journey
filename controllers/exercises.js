@@ -52,7 +52,6 @@ function updatePage(req, res){
 function updateExercise(req, res){
     Workout.findById(req.params.id, function(err, workout){
         workout.exercises[req.params.idx] = req.body;
-        console.log(req.body);
         workout.save(function(err){
             res.redirect(`/exercises/${req.params.id}/${req.params.idx}`);
         });

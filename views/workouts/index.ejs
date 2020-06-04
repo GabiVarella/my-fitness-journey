@@ -21,10 +21,10 @@
                 <td><a href="/workouts/<%= w._id %>">VIEW</a></td>
               </form>
             <td>
-              <form action="" method="">
-                <button type="submit" class="btn btn-outline-primary">Like</button>
+              <form action="/workouts/<%= w._id %>?_method=PUT" method="POST">
+                <input hidden type="Number" name="likes" id="" value="<% w.likes + 1 %>">
+                <button type="submit" class="btn btn-outline-primary">Like <%= w.likes %></button> 
               </form>
-              <!-- Squid Print # of Likes -->
             </td>
             <td>
               <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
