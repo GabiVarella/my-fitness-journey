@@ -1,9 +1,6 @@
 <%- include('../partials/header'); %>
-
 <h2 class="shadow p-3 mb-5 bg-light rounded">My Journal</h2>
-<br>
 <table class="table table-striped">
-  
   <thead class="thead-dark">
       <tr>
         <% if (workouts.length) { %>
@@ -15,8 +12,6 @@
       </tr>
     <% } %>
   </thead>
-
-
   <tbody>
       <% workouts.forEach(function(w) { %>
           <tr>
@@ -43,14 +38,10 @@
 <br>
 <form method="POST" action="/workouts">
   <div class="input-group">
-    <input name="name" type="text" class="form-control" required="true" placeholder="What Are You Calling Your New Workout?" aria-label="" aria-describedby="basic-addon1">
+    <input name="name" type="text" class="form-control" required="true" placeholder=" What Are You Calling Your New Workout?" aria-label="" aria-describedby="basic-addon1">
   </div>
   <div class="input-group-append">
-    <button class="btn btn-outline-success" type="submit">Add Workout</button>
+    <button class="btn btn-outline-success elMargin" type="submit">Add Workout</button>
   </div>
 </form>
-
-
-
-
 <%- include('../partials/footer'); %>

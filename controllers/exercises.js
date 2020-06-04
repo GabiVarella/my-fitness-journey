@@ -54,7 +54,7 @@ function updateExercise(req, res){
         workout.exercises[req.params.idx] = req.body;
         console.log(req.body);
         workout.save(function(err){
-            res.redirect(`/workouts/${req.params.id}`);
+            res.redirect(`/exercises/${req.params.id}/${req.params.idx}`);
         });
     });
 };
