@@ -19,6 +19,7 @@
 .mynavbarftsize {
   font-size: 1.5em;
   color: black;
+  font-family: 'ABeeZee';
 }
 
 .exdescription {
@@ -31,4 +32,39 @@
 
 .elMargin {
   margin: 0 10px;
+}
+
+footer{
+	text-transform: uppercase;
+  padding: 2.5vh;
+  margin: 1rem 0 1rem 0;
+	background-color:rgb(25, 40, 40);
+	color: white;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+}
+
+.copyright{
+	float: left;
+    font-family: 'ABeeZee';
+}
+
+.message{
+	float: right;
+    font-family: 'Bangers';
+}
+
+.clearfix:after {
+visibility: hidden;
+display: block;
+content: " ";
+clear: both;
+height: 0;
+font-size: 0;
+}
+
+.name{
+	color: #F15B31;
+	font-weight: 700;
 }

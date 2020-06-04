@@ -3,6 +3,10 @@
 
 <head>
   <title>My Fitness Journey</title>
+  <!-- Google fonts -->
+  <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
   <!-- Google Icon Fonts used by Materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS Framework -->
@@ -23,7 +27,7 @@
         <ul class="right">
           <li>
           <% if (user) { %>
-            <a href="/logout"><i class="material-icons left">trending_flat</i><span class="mynavbarftsize">Log Out</span></a>
+            <a href="/logout">i<i class="material-icons left">trending_flat</i><span class="mynavbarftsize">Log Out</span></a>
           <% } else { %>
             <a href="/auth/google"><i class="material-icons left">vpn_key</i><span class="mynavbarftsize">Login with Google</span></a>
           <% } %>
