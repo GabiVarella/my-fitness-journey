@@ -16,13 +16,12 @@
       <% workouts.forEach(function(w) { %>
           <tr>
             <td class="listproperties"><%= w.name %></td>
-            <td class="listproperties"><%= w.createdAt.toLocaleString() %></td>
+            <td class="listproperties"><%= w.createdAt.toLocaleString([], { hour: '2-digit', minute: '2-digit' }) %></td>
               <form action="/workouts" method="POST">
                 <td><a href="/workouts/<%= w._id %>">VIEW</a></td>
               </form>
             <td>
               <form action="/workouts/<%= w._id %>?_method=PUT" method="POST">
-                <input hidden type="Number" name="likes" id="" value="<% w.likes + 1 %>">
                 <button type="submit" class="btn btn-outline-primary">Like <%= w.likes %></button> 
               </form>
             </td>

@@ -9,6 +9,7 @@ module.exports = {
     show,
     updatePage,
     updateExercise,
+    addLikeEx,
   };
 
 function newExercisePage(req, res){
@@ -57,3 +58,12 @@ function updateExercise(req, res){
         });
     });
 };
+
+function addLikeEx(req, res) {
+    Workout.findById(req.params.id, function(err, workout){
+       workout.exercises[req.params.idx].likes += 1;
+      workout.save(function(err){
+        res.redirect(`/workouts/${req.params.id}`);
+      });
+    });
+  };

@@ -16,11 +16,15 @@
             <% workout.exercises.forEach(function(ex, idx) { %>
             <tr>
                 <td class="listproperties"><%= ex.name %></td>
-                <td class="listproperties"><%= ex.updatedAt.toLocaleString() %></td>
+                <td class="listproperties"><%= ex.updatedAt.toLocaleString().splice(1, 3) %></td>
                     <form action="/exercises/<%= workout._id %>/<%= idx %>" method="GET">
                         <td><a href="/exercises/<%= workout._id %>/<%= idx %>">VIEW</a></td>
                     </form>
-                <td># of Likes</td>
+                <td>
+                    <form action="/exercises/<%= workout._id %>/<%= idx %>?_method=PUT" method="POST">
+                        <button type="submit" class="btn btn-outline-primary">Like <%= ex.likes %></button> 
+                    </form>
+                    </td>
                 <td>
                     <form action="/exercises/<%= workout._id %>/<%= idx %>?_method=DELETE" method="POST">
                       <button type="submit" class="btn btn-outline-danger">X</button>

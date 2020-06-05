@@ -8,7 +8,9 @@ const exerciseSchema = new mongoose.Schema({
     weight: Number,
     reps: Number,
     sets: Number,
-    likes: Number,
+    likes: {
+        type: Number, 
+        default: 0},
     link: String,
     workout: {
         type: Schema.Types.ObjectId, 
@@ -21,7 +23,8 @@ const exerciseSchema = new mongoose.Schema({
 const workoutSchema = new mongoose.Schema({
     name: String,
     likes: {
-        type: Number, default: 0},
+        type: Number, 
+        default: 0},
     exercises: [exerciseSchema],
     user: {
         type: Schema.Types.ObjectId, 
