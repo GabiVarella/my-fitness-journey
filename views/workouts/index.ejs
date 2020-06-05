@@ -16,7 +16,7 @@
       <% workouts.forEach(function(w) { %>
           <tr>
             <td class="listproperties"><%= w.name %></td>
-            <td class="listproperties"><%= w.createdAt.toLocaleString([], { hour: '2-digit', minute: '2-digit' }) %></td>
+            <td class="listproperties"><%= w.createdAt.toLocaleDateString([], { hour: '2-digit', minute: '2-digit' }) %></td>
               <form action="/workouts" method="POST">
                 <td><a href="/workouts/<%= w._id %>">VIEW</a></td>
               </form>
