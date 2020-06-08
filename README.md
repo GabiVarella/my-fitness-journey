@@ -61,3 +61,11 @@ User will be able to make a comment on a workout or exercise.
 
 ==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
 ==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
+
+### *Special Thanks*
+
+
+To Crystal Vasquez, Linnae Krammer and Ben Manley. This could not be possible with out your support and patience.
+
+==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
+==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
