@@ -10,6 +10,7 @@ module.exports = {
     updatePage,
     updateExercise,
     addLikeEx,
+    // linkFormat,
   };
 
 function newExercisePage(req, res){
@@ -20,7 +21,6 @@ function newExercisePage(req, res){
 
 function addExercise(req, res){
     req.body.workout = req.params.id;
-    console.log(req.body);
     Workout.findById(req.params.id, function(err, workout){
         workout.exercises.push(req.body);
         workout.save(function(err){
@@ -28,6 +28,26 @@ function addExercise(req, res){
         })
     });
 };
+// function addExercise(req, res){
+//     req.body.workout = req.params.id;
+//     let link = req.body.split(".") 
+//     if(link[1] === 'youtube') { 
+//     function getId(url) {
+//        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+//        const match = url.match(regExp);
+//        return (match && match[2].length === 11)? match[2]: null;
+//      }
+//      const videoId = getId(req.body.link);
+//      const iframeMarkup = 'www.youtube.com/embed/' + videoId;
+//      req.body.link = iframeMarkup
+//      }
+//      Workout.findById(req.params.id, function(err, workout){
+//         workout.exercises.push(req.body);
+//         workout.save(function(err){
+//             res.redirect(`/workouts/${req.params.id}`);
+//         })
+//     });
+// };
 
 function deleteExercise(req, res){
     Workout.findById(req.params.id, function(err, workout){
@@ -61,9 +81,27 @@ function updateExercise(req, res){
 
 function addLikeEx(req, res) {
     Workout.findById(req.params.id, function(err, workout){
-       workout.exercises[req.params.idx].likes += 1;
-      workout.save(function(err){
-        res.redirect(`/workouts/${req.params.id}`);
-      });
+        workout.exercises[req.params.idx].likes += 1;
+        workout.save(function(err){
+            res.redirect(`/workouts/${req.params.id}`);
+        });
     });
-  };
+};
+
+// function linkFormat(req, res) {
+//     Workout.findById(req.params.id, function(err, workout){
+//         function getId(url) {
+//             const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+//             const match = url.match(regExp);
+        
+//             return (match && match[2].length === 11)
+//               ? match[2]
+//               : null;
+//         };
+            
+//         const videoId = getId(workout.exercises[req.params.idx].link);
+//         const iframeMarkup = '<iframe width="560" height="315" src="//www.youtube.com/embed/' 
+//             + videoId + '" frameborder="0" allowfullscreen></iframe>';
+//             res.redirect(`/exercises/${req.params.id}/${req.params.idx}`, {tag: iframeMarkup});
+//     });
+// };

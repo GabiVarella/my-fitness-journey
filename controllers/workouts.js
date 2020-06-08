@@ -55,8 +55,3 @@ function addLike(req, res) {
     });
   });
 };
-// function newWorkoutPage(req, res){
-//   User.find({user: req.user._id}, function(err, user){
-//     res.render('workouts/new', {user: user});
-//   })
-// };
