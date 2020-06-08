@@ -25,13 +25,13 @@ Start Your Fitness Journey:  https://my-fitness-journey.herokuapp.com/
 
 Trello Board https://trello.com/b/7DkH8fWu/my-fitness-journey-project
 
-![Login Screen](./images/login.png)
+![Login Screen](./public/images/login.png)
 
-![Workouts](./images/workouts.png)
+![Workouts](./public/images/workouts.png)
 
-![Exercises](./images/exercises.png)
+![Exercises](./public/images/exercises.png)
 
-![Details](./images/details.png)
+![Details](./public/images/details.png)
 
 ==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
 ==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
