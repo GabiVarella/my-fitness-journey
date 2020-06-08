@@ -15,7 +15,7 @@
 
 Most individuals begin a new exercise program with the best intentions, but may fall short of their goals or end up abandoning them altogether. Maintaining an exercise journal helps a person keep track of progress and see firsthand if he or she is sticking to a steady exercise routine.
 
-Start Your Fitness Journey: 
+Start Your Fitness Journey:  https://my-fitness-journey.herokuapp.com/
 
 ==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
 ==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>
